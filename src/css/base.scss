@@ -167,17 +167,47 @@ main {
 
 #mgr-dashboard-right {
   border-left: solid 1px black;
-  height: 100%;
-  padding-left: 2%;
-  width: 50%
-}
-
-#search-guest-section {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  // justify-content: space-evenly;
+  padding-left: 2%;
+  width: 50%;
+}
+
+#search-guest-top {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  justify-content: space-around;
+}
+
+#search-bar {
+  align-items: center;
+  display: flex;
   justify-content: space-evenly;
-  height: 15%
+  width: 100%
+}
+
+#book-by-date {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%
+}
+
+#searched-guest-info-top {
+  padding-top: 1em;
+  border-top: 1px solid black
+}
+
+#searched-guest-name {
+  font-size: 1.25em;
+}
+
+#searched-guest-bookings {
+  font-size: 1.25em;
+  height: 60%
 }
 
 #search-bar {
