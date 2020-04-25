@@ -100,6 +100,7 @@ main {
 
 .welcome {
   font-size: 2em;
+  height: 15%
 }
 
 #guest-dashboard-bottom {
@@ -158,7 +159,7 @@ main {
 }
 
 #mgr-available-rooms {
-  height: 60%
+  height: 100%
 }
 
 .available-rooms {
@@ -170,35 +171,47 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
-  // justify-content: space-evenly;
   padding-left: 2%;
   width: 50%;
 }
 
-#search-guest-top {
+#search-guest-section {
   display: flex;
   flex-direction: column;
-  height: 40%;
+  height: 70%;
   justify-content: space-around;
 }
 
 #search-bar {
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
-  width: 100%
+  height: 50%;
+  justify-content: center;
+  width: 100%;
 }
 
 #book-by-date {
   align-items: center;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  height: 50%;
+  visibility: hidden;
   width: 100%
 }
 
+#date-bar {
+  display: flex
+}
+
+#searched-guest-info {
+  height: 100%
+}
+
 #searched-guest-info-top {
-  padding-top: 1em;
-  border-top: 1px solid black
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  justify-content: space-evenly;
 }
 
 #searched-guest-name {
@@ -207,7 +220,7 @@ main {
 
 #searched-guest-bookings {
   font-size: 1.25em;
-  height: 60%
+  height: 75%
 }
 
 #search-bar {

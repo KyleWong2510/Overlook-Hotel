@@ -80,30 +80,21 @@
                 </p>
               </div>
             </section>
-            <section id="mgr-available-rooms">
-              <h4 class="available-rooms">
-                Today's Available Rooms:
-              </h4>
-              <div id="mgr-rooms-container">
-
+            <section id='search-guest-section'>
+              <div id='search-bar'>
+                <p id='search-guest'>
+                  Search Users:
+                </p>
+                <input id='search-guest-input' type='search' name='search' placeholder='Enter User Name'>
+                <button id='search-guest-btn'>
+                  Search
+                </button>
               </div>
-            </section>
-          </div>
-          <div id="mgr-dashboard-right">
-            <div id="search-guest-top">
-              <section id='search-guest-section'>
-                <div id='search-bar'>
-                  <p id='search-guest'>
-                    Search Users:
-                  </p>
-                  <input id='search-guest-input' type='search' name='search' placeholder='Enter User Name'>
-                  <button id='search-guest-btn'>
-                    Search
-                  </button>
-                </div>
-              </section>
-              <div id="search-guest-section" class="hide">
-                <div id='book-by-date'>
+              <div id='book-by-date' class="">
+                <p id="date-bar-header">
+                  Book a room for this customer:
+                </p>
+                <div id="date-bar">
                   <p id='select-date'>
                     Select Date:
                   </p>
@@ -113,26 +104,37 @@
                   </button>
                 </div>
               </div>
-              <section id="searched-guest-info" class="hide">
-                <div id="searched-guest-info-top">
-                  <h4 id="searched-guest-name">
-                    Jack Torrance
-                  </h4>
-                  <p id="amount-spent">
-                    Total Spent: 
-                    <span id="amount">
-                      $5004.24
-                    </span>
-                  </p>
-                </div> 
-              </section>
-            </div>
-              <div id="searched-guest-bookings" class="hide">
+            </section>
+
+          </div>
+          <div id="mgr-dashboard-right">
+            <section id="mgr-available-rooms" class="">
+              <h4 class="available-rooms">
+                Today's Available Rooms:
+              </h4>
+              <div id="mgr-rooms-container">
+
+              </div>
+            </section>
+            <section id="searched-guest-info" class="hide">
+              <div id="searched-guest-info-top">
+                <h4 id="searched-guest-name">
+                  Jack Torrance
+                </h4>
+                <p id="amount-spent">
+                  Total Spent: 
+                  <span id="amount">
+                    $5004.24
+                  </span>
+                </p>
+              </div> 
+              <div id="searched-guest-bookings">
                 <h4>
                   Bookings:
                 </h4>
                 <div id="guest-bookings">        
               </div>
+            </section>
             </div>
           </div>
         </div>
