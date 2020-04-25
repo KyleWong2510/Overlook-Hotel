@@ -25,10 +25,10 @@
           </div>
         </div>
       </div>
-      <div class="guest-view">
+      <div class="guest-view hide">
         <div id="guest-dashboard">
           <div id="guest-dashboard-top">
-            <h3 id="welcome-guest">
+            <h3 class="welcome">
               Welcome, Guest
             </h3>
             <p id="amount-spent">
@@ -48,8 +48,84 @@
             </div>
         </div>
       </div>
-      <div class="mgr-view hide">
+      <div class="mgr-view ">
+        <div id="mgr-dashboard">
+          <div id="mgr-dashboard-left">
+            <h3 class="welcome">
+              Welcome, Manager
+            </h3>
+            <section id="mgr-stats">
+              <div id="revenue-today">
+                <p>
+                  Today's Revenue:
+                </p>
+                <p id="revenue" class="stat">
+                  $4000.34
+                </p>
+              </div>
+              <div id="num-rooms-available">
+                <p>
+                  Rooms Available:
+                </p>
+                <p id="num-rooms" class="stat">
+                  5
+                </p>
+              </div>
+              <div id="percent-booked">
+                <p>
+                  Percent Booked:
+                </p>
+                <p id="percent" class="stat">
+                  80%
+                </p>
+              </div>
+            </section>
+            <section id="mgr-available-rooms">
+              <h4 class="available-rooms">
+                Today's Available Rooms:
+              </h4>
+              <div id="mgr-rooms-container">
 
+              </div>
+            </section>
+          </div>
+          <div id="mgr-dashboard-right">
+            <section id='search-guest-section'>
+              <div id='search-bar'>
+                <p id='search-guest'>
+                  Search Users:
+                </p>
+                <input id='search-guest-input' type='search' name='search' placeholder='Enter User Name'>
+              </div>
+              <button id='search-guest-btn'>
+                Search
+              </button>
+            </section>
+            <div id="searched-guest-info">
+              <div id="searched-guest-dashboard">
+                <div id="searched-guest-info-top">
+                  <p id="guest-name">
+                    Jack Torrance
+                  </p>
+                  <p id="amount-spent">
+                    Total Spent: 
+                    <span id="amount">
+                      $5004.24
+                    </span>
+                  </p>
+                </div> 
+                  <div id="searched-guest-info-bottom">
+                    <p>
+                      Bookings
+                    </p>
+                    <div id="user-bookings">
+                    
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
