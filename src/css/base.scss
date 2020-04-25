@@ -1,6 +1,49 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+*,
+*:after,
+*:before {
+  // border: solid 1px grey;
+  box-sizing: border-box;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
 
-body {
-  background-color: $primary-background;
+header {
+  background-color: lightgrey;
+  display: flex;
+  height: 20vh;
+  justify-content: space-evenly;
+  padding: 2em;
+  width: 100vw;
+}
+
+h1 {
+  align-self: flex-end;
+  width: 85%
+}
+
+#nav-bar {
+  display: flex;
+  width: 35%
+}
+
+#nav-bar-links {
+  font-size: 1.25em;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 100%;
+}
+
+#nav-bar-links li {
+  align-self: flex-end;
+  border: solid 1px black;
+  padding: 2%;
+  text-align: center;
+  width: 25%;
+}
+
+main {
+  height: 80vh;
+  width: 100vw;
 }
