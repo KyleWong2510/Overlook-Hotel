@@ -1,6 +1,368 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+*,
+*:after,
+*:before {
+  // border: solid 1px grey;
+  box-sizing: border-box;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
 
-body {
-  background-color: $primary-background;
+header {
+  background-color: lightgrey;
+  display: flex;
+  height: 20vh;
+  justify-content: space-evenly;
+  padding: 2em;
+  width: 100vw;
+}
+
+h1 {
+  align-self: flex-end;
+  width: 85%
+}
+
+#nav-bar {
+  display: flex;
+  width: 35%
+}
+
+#nav-bar-links {
+  font-size: 1.25em;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 100%;
+}
+
+#nav-bar-links li {
+  align-self: flex-end;
+  border: solid 1px black;
+  padding: 2%;
+  text-align: center;
+  width: 25%;
+}
+
+main {
+  align-content: center;
+  display: flex;
+  height: 80vh;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+//HOTEL VIEW
+.hotel-view {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#hotel-view-imgs {
+  background-color: black;
+  height: 70%;
+  width: 70%
+}
+
+.hotel-view-img {
+  background-color: lightgrey;
+  height: 100%;
+  width: 100%
+}
+
+//GUEST VIEW
+.guest-view {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#guest-dashboard {
+  align-items: center;
+  background-color: lightgrey;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  text-align: center;
+  padding:2%;
+  width: 70%
+}
+
+#guest-dashboard-top {
+  height: 20%;
+  width: 100%;
+}
+
+.welcome {
+  font-size: 2em;
+  height: 15%
+}
+
+#guest-dashboard-bottom {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  height: 80%;
+  width: 100%
+}
+
+//MANAGER VIEW
+.mgr-view {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#mgr-dashboard {
+  align-items: center;
+  background-color: lightgrey;
+  color: black;
+  display: flex;
+  height: 70%;
+  padding:2%;
+  text-align: center;
+  width: 70%
+}
+
+#mgr-dashboard-left {
+  border-right: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding-right: 2%;
+  width: 50%
+}
+
+#mgr-stats {
+  display: flex;
+  height: 15%;
+  justify-content: space-between;
+}
+
+#mgr-stats div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.stat {
+  font-size: 1.5em;
+}
+
+#mgr-available-rooms {
+  height: 100%
+}
+
+.available-rooms {
+  font-size: 1.25em;
+}
+
+#mgr-dashboard-right {
+  border-left: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 2%;
+  width: 50%;
+}
+
+#search-guest-section {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: space-around;
+}
+
+#search-bar {
+  align-items: center;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  width: 100%;
+}
+
+#book-by-date {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  visibility: hidden;
+  width: 100%
+}
+
+#date-bar {
+  display: flex
+}
+
+#searched-guest-info {
+  height: 100%
+}
+
+#searched-guest-info-top {
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  justify-content: space-evenly;
+}
+
+#searched-guest-name {
+  font-size: 1.25em;
+}
+
+#searched-guest-bookings {
+  font-size: 1.25em;
+  height: 75%
+}
+
+#search-bar {
+  display: flex
+}
+
+//ROOMS VIEW
+.rooms-view {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#room-types {
+  align-items: center;
+  background-color: lightgrey;
+  color: black;
+  // display: flex;
+  height: 70%;
+  overflow: auto;
+  padding:2%;
+  text-align: center;
+  white-space: nowrap;
+  width: 70%
+}
+
+.room-type-card {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-flex;
+  height: 100%;
+  width: 80%
+}
+
+.room-img {
+  width: 70%
+}
+
+.room-overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5em 2em;
+  width: 30%
+}
+
+.room-overview button {
+  height: 20%;
+  width: 95%
+}
+
+.room-type {
+  font-size: 1.5em;
+  
+}
+
+.starting-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 1.5em;
+}
+
+//BOOKING VIEW
+.book-view {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#booking-form {
+  align-items: center;
+  background-color: lightgrey;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  padding:2%;
+  text-align: center;
+  width: 70%
+}
+
+#date-selection {
+  height: 10%;
+  width: 100%
+}
+
+.dates-result {
+  border: 1px solid black;
+  height: 100%;
+  width: 100%
+}
+
+#filter-room-type {
+  align-items: center;
+  display: flex;
+  height: 10%;
+  justify-content: center;
+}
+
+#rooms-available {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 100%
+}
+
+#room-results {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+//LOGIN VIEW
+.login-view {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#login-container {
+  align-items: center;
+  background-color: lightgrey;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  justify-content: space-evenly;
+  padding: 6%;
+  text-align: center;
+  width: 40%
+}
+
+.hide {
+  display: none;
 }

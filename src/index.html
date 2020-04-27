@@ -1,13 +1,267 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <title>Overlook Hotel</title>
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
+    <header>
+      <h1>
+        Overlook Hotel
+      </h1>
+      <nav id="nav-bar">
+        <ul id="nav-bar-links">
+          <li id="nav-rooms-btn">Rooms</li>
+          <li id="nav-book-btn">Book</li>
+          <li id="nav-contact-btn">Contact</li>
+          <li id="nav-login-btn">Login</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="hotel-view hide">
+        <div id="hotel-view-imgs">
+          <div class="hotel-view-img">
+            Image Here
+          </div>
+        </div>
+      </div>
+      <div class="guest-view hide">
+        <div id="guest-dashboard">
+          <div id="guest-dashboard-top">
+            <h3 class="welcome">
+              Welcome, Guest
+            </h3>
+            <p id="amount-spent">
+              Total Spent: 
+              <span id="amount">
+                $5004.24
+              </span>
+            </p>
+          </div> 
+            <div id="guest-dashboard-bottom">
+              <p>
+                Bookings
+              </p>
+              <div id="user-bookings">
+              
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="mgr-view hide">
+        <div id="mgr-dashboard">
+          <div id="mgr-dashboard-left">
+            <h3 class="welcome">
+              Welcome, Manager
+            </h3>
+            <section id="mgr-stats">
+              <div id="revenue-today">
+                <p>
+                  Today's Revenue:
+                </p>
+                <p id="revenue" class="stat">
+                  $4000.34
+                </p>
+              </div>
+              <div id="num-rooms-available">
+                <p>
+                  Rooms Available:
+                </p>
+                <p id="num-rooms" class="stat">
+                  5
+                </p>
+              </div>
+              <div id="percent-booked">
+                <p>
+                  Percent Booked:
+                </p>
+                <p id="percent" class="stat">
+                  80%
+                </p>
+              </div>
+            </section>
+            <section id='search-guest-section'>
+              <div id='search-bar'>
+                <p id='search-guest'>
+                  Search Users:
+                </p>
+                <input id='search-guest-input' type='search' name='search' placeholder='Enter User Name'>
+                <button id='search-guest-btn'>
+                  Search
+                </button>
+              </div>
+              <div id='book-by-date' class="">
+                <p id="date-bar-header">
+                  Book a room for this customer:
+                </p>
+                <div id="date-bar">
+                  <p id='select-date'>
+                    Select Date:
+                  </p>
+                  <input id='select-date-input' type='date' name='date' placeholder='Enter Date'>
+                  <button id='select-date-btn'>
+                    Search
+                  </button>
+                </div>
+              </div>
+            </section>
 
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
+          </div>
+          <div id="mgr-dashboard-right">
+            <section id="mgr-available-rooms" class="">
+              <h4 class="available-rooms">
+                Today's Available Rooms:
+              </h4>
+              <div id="mgr-rooms-container">
 
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+              </div>
+            </section>
+            <section id="searched-guest-info" class="hide">
+              <div id="searched-guest-info-top">
+                <h4 id="searched-guest-name">
+                  Jack Torrance
+                </h4>
+                <p id="amount-spent">
+                  Total Spent: 
+                  <span id="amount">
+                    $5004.24
+                  </span>
+                </p>
+              </div> 
+              <div id="searched-guest-bookings">
+                <h4>
+                  Bookings:
+                </h4>
+                <div id="guest-bookings">        
+              </div>
+            </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rooms-view hide">
+        <div id="room-types">
+          <div id="residential-suite" class="room-type-card">
+            <div class="img">
+
+            </div>
+            <div class="room-overview">
+              <p class="room-type">
+                Residential <br> Suite
+              </p>
+              <div class="starting-price">
+                <p>Starting at</p> 
+                <p class="price">$176.36</p>
+              </div>
+              <button id="more-residentials-btn" class="more-rooms-btn">
+                View More Rooms
+              </button>
+            </div>
+          </div>
+          <div id="suite" class="room-type-card">
+            <div class="img">
+
+            </div>
+            <div class="room-overview">
+              <p class="room-type">
+                Suite
+              </p>
+              <div class="starting-price">
+                <p>Starting at</p> 
+                <p class="price">$327.24</p>
+              </div>
+              <button id="more-suites-btn" class="more-rooms-btn">
+                View More Rooms
+              </button>
+            </div>
+          </div>
+          <div id="junior-suite" class="room-type-card">
+            <div class="img">
+
+            </div>
+            <div class="room-overview">
+              <p class="room-type">
+                Junior <br> Suite
+              </p>
+              <div class="starting-price">
+                <p>Starting at</p> 
+                <p class="price">$261.26</p>
+              </div>
+              <button id="more-juniors-btn" class="more-rooms-btn">
+                View More Rooms
+              </button>
+            </div>
+          </div>
+          <div id="single" class="room-type-card">
+            <div class="room-img">
+
+            </div>
+            <div class="room-overview">
+              <p class="room-type">
+                Single
+              </p>
+              <div class="starting-price">
+                <p>Starting at</p>
+                <p class="price">$172.09</p> 
+              </div>
+              <button id="more-singles-btn" class="more-rooms-btn">
+                View More Rooms
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="book-view hide">
+        <form id="booking-form">
+          <div id="date-selection">
+            <label for="date">
+              Select a Date:
+            </label>
+            <input type="date" name="date">
+            <button id="select-date">
+              Select Date
+            </button>
+          </div>
+          <div class="dates-result">
+            <div id="filter-room-type">
+              <p>
+                Room Type:
+              </p>
+              <select name="room-type-dropdown">
+                <option>Residential Suite</option>
+                <option>Suite</option>
+                <option>Junior Suite</option>
+                <option>Single</option>
+              </select>
+              <button>
+                Select Type
+              </button>
+            </div>
+            <div id="rooms-available">
+              Available Rooms:
+              <div id="room-results">
+                  There are no rooms matching the search
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="contact-view">
+
+      </div>
+      <div class="login-view">
+        <div id="login-container">
+          <div>
+            <label for="user-name">Username:</label>
+            <input name="user-name" placeholder="Username">
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input name="password" type="password" placeholder="Password">
+          </div>
+          <button id="login-btn">Login</button> 
+        </div>
+      </div>
+    </main>
   </body>
 </html>
