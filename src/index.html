@@ -139,7 +139,7 @@
           </div>
         </div>
       </div>
-      <div class="rooms-view">
+      <div class="rooms-view hide">
         <div id="room-types">
           <div id="residential-suite" class="room-type-card">
             <div class="img">
@@ -193,7 +193,7 @@
             </div>
           </div>
           <div id="single" class="room-type-card">
-            <div class="img">
+            <div class="room-img">
 
             </div>
             <div class="room-overview">
@@ -211,14 +211,56 @@
           </div>
         </div>
       </div>
-      <div class="book-view">
-
+      <div class="book-view hide">
+        <form id="booking-form">
+          <div id="date-selection">
+            <label for="date">
+              Select a Date:
+            </label>
+            <input type="date" name="date">
+            <button id="select-date">
+              Select Date
+            </button>
+          </div>
+          <div class="dates-result">
+            <div id="filter-room-type">
+              <p>
+                Room Type:
+              </p>
+              <select name="room-type-dropdown">
+                <option>Residential Suite</option>
+                <option>Suite</option>
+                <option>Junior Suite</option>
+                <option>Single</option>
+              </select>
+              <button>
+                Select Type
+              </button>
+            </div>
+            <div id="rooms-available">
+              Available Rooms:
+              <div id="room-results">
+                  There are no rooms matching the search
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
       <div class="contact-view">
 
       </div>
       <div class="login-view">
-
+        <div id="login-container">
+          <div>
+            <label for="user-name">Username:</label>
+            <input name="user-name" placeholder="Username">
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input name="password" type="password" placeholder="Password">
+          </div>
+          <button id="login-btn">Login</button> 
+        </div>
       </div>
     </main>
   </body>
