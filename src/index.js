@@ -1,13 +1,68 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you import jQuery into a JS file if you use jQuery in that file
 import $ from 'jquery';
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
+import User from './User';
+import Booking from './Booking'
+import Hotel from './Hotel';
 
-console.log('This is the JavaScript entry file - your code begins here.');
+let usersRepo = [];
+let roomsRepo = [];
+let bookingsRepo = [];
+let usersData;
+let roomsData;
+let bookingsData;
+let hotel;
+
+const createUsers = (users) => {
+  users.forEach(user => {
+    const newUser = new User(user);
+    usersRepo.push(newUser)
+  })
+}
+
+const pushRooms = (rooms) => {
+  rooms.forEach(room => {
+    roomsRepo.push(room)
+  })
+}
+
+const createBookings = (bookings) => {
+  bookings.forEach(booking => {
+    const newBooking = new Booking(booking);
+    bookingsRepo.push(newBooking)
+  })
+}
+
+const createHotel = (rooms, bookings) => {
+  hotel = new Hotel(rooms, bookings)
+}
+
+const fetchData = () => {
+  usersData = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users')
+    .then(response => response.json())
+    .catch(error => console.error(error));
+    
+  roomsData = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms')
+    .then(response => response.json())
+    .catch(error => console.error(error))
+
+  bookingsData = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings')
+    .then(response => response.json())
+    .catch(error => console.error(error))
+
+  return Promise.all([usersData, roomsData, bookingsData])
+    .then(response => {
+      usersData = response[0].users;
+      roomsData = response[1].rooms;
+      bookingsData = response[2].bookings;      
+      
+      createUsers(usersData);
+      pushRooms(roomsData);
+      createBookings(bookingsData);
+      createHotel(roomsData, bookingsData)
+    })
+    .catch(error => console.error(error))
+}
+
+
+fetchData()
