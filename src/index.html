@@ -18,7 +18,7 @@
       </nav>
     </header>
     <main>
-      <div class="hotel-view">
+      <div class="hotel-view hide">
         <div id="hotel-view-imgs">
           <div class="hotel-view-img">
             Image Here
@@ -45,7 +45,7 @@
             </div>
         </div>
       </div>
-      <div class="mgr-view hide">
+      <div class="mgr-view">
         <div id="mgr-dashboard">
           <div id="mgr-dashboard-left">
             <h3 id="welcome-mgr">
@@ -81,7 +81,7 @@
                   Search
                 </button>
               </div>
-              <div id='book-by-date' class="">
+              <div id='book-by-date'>
                 <p id="date-bar-header">
                   Book a room for this customer:
                 </p>
@@ -108,14 +108,10 @@
             </section>
             <section id="searched-guest-info" class="hide">
               <div id="searched-guest-info-top">
-                <h4 id="searched-guest-name">
-                  Jack Torrance
-                </h4>
+                <h4 id="searched-guest-name"></h4>
                 <p id="amount-spent">
                   Total Spent: 
-                  <span id="amount">
-                    $5004.24
-                  </span>
+                  <span class="amount"></span>
                 </p>
               </div> 
               <div id="searched-guest-bookings">
@@ -130,7 +126,7 @@
         </div>
       </div>
       <div class="rooms-view hide">
-        <div class="room-types hide">
+        <div class="room-types">
           <div id="residential-suite" class="room-type-card">
             <div class="room-img">
 
@@ -200,7 +196,7 @@
             </div>
           </div>
         </div>
-        <div class="rooms-by-type">
+        <div class="rooms-by-type hide">
           <p id="rooms-by-type-title"></p>
           <div id="rooms-available-by-type"></div>
         </div>

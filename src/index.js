@@ -150,12 +150,33 @@ const displayDashboards = () => {
       // userHandler(currentUser)
     }
   }
+  
   console.log(currentUser)
   // else {
     //   alert('You must fill out the form with valid information')
     // }
   }
   
+  const displaySearchedGuestInfo = () => {
+    let searchedUser = usersRepo.find(user => user.name === $('#search-guest-input').val())
+    searchedUser.addToBookings(bookingsRepo);
+    console.log(searchedUser)
+    $('#mgr-available-rooms').addClass('hide')
+    $('#searched-guest-info').removeClass('hide')
+    $('#book-by-date').attr('style', 'visibility: visible')
+    $('#searched-guest-name').text(searchedUser.name)
+
+    let formatted = Number(searchedUser.calcAmountSpent(roomsRepo).toFixed(2))
+    $('.amount').text(`$${formatted}`)
+    searchedUser.userBookings.forEach(booking => {
+      $(`<div class='booking-card' id=${booking.id}>
+        <p>${booking.id}<p> 
+        <p>Room: ${booking.roomNumber}</p>
+        <p>Date: ${booking.date}</p>
+      <div>`)
+      .appendTo('#searched-guest-bookings')
+    })
+  }
 
 
 //COME BACK TO THIS FN
@@ -169,6 +190,7 @@ $('#nav-rooms-btn').click(domUpdates.displayRoomsView)
 $('#nav-book-btn').click(domUpdates.displayBookView)
 $('#nav-contact-btn').click(domUpdates.displayContactView)
 $('#nav-login-btn').click(domUpdates.displayLoginView)
+$('#search-guest-btn').click(displaySearchedGuestInfo)
 $('#login-btn').click(displayDashboards)
 
 fetchData()

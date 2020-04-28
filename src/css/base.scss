@@ -247,8 +247,13 @@ main {
 }
 
 #searched-guest-bookings {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   font-size: 1.25em;
-  height: 75%
+  height: 75%;
+  overflow: scroll;
 }
 
 #search-bar {
