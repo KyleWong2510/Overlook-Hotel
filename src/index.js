@@ -1,9 +1,11 @@
 import $ from 'jquery';
 import './css/base.scss';
 import './images/turing-logo.png'
+import moment from 'moment';
 import User from './User';
 import Booking from './Booking'
 import Hotel from './Hotel';
+import domUpdates from './DomUpdates'
 
 let usersRepo = [];
 let roomsRepo = [];
@@ -12,6 +14,8 @@ let usersData;
 let roomsData;
 let bookingsData;
 let hotel;
+let dateToday = moment().format('YYYY/MM/DD')
+let currentUser;
 
 const createUsers = (users) => {
   users.forEach(user => {
@@ -35,6 +39,21 @@ const createBookings = (bookings) => {
 
 const createHotel = (rooms, bookings) => {
   hotel = new Hotel(rooms, bookings)
+}
+
+const userHandler = (user) => {
+  user.addToBookings(bookingsRepo);
+  user.calcAmountSpent(roomsRepo)
+}
+
+const hotelHandler = (date) => {
+  hotel.filterRoomsBooked(date)
+  hotel.filterRoomsAvailable()
+  hotel.filterUpcomingBookings(date)
+  hotel.filterCurrentBookings(date)
+  hotel.filterPastBookings(date)
+  hotel.calculateTotalRevenue()
+  hotel.calculatePercentOccupied()
 }
 
 const fetchData = () => {
@@ -61,8 +80,37 @@ const fetchData = () => {
       createBookings(bookingsData);
       createHotel(roomsData, bookingsData)
     })
+    .then(() => {
+      hotelHandler(dateToday)    
+    })
     .catch(error => console.error(error))
 }
 
+const displayDashboards = () => {
+  if($('#user-name-input').val() === 'manager' && $('#password-input').val() === 'overlook2020') {
+    domUpdates.displayMgrView()
+    currentUser = 'manager'
+    //How can we access a role?  Extend mgr?
+    currentUser.role = 'manager'
+  }
+  for (let i = 0; i < 51; i++) {
+    if($('#user-name-input').val() === `customer${i}` && $('#password-input').val() === 'overlook2020') {
+      domUpdates.displayGuestView()
+      currentUser = usersRepo.find(user => user.id === i)
+      currentUser.role = 'guest'
+      userHandler(currentUser)
+    }
+  }
+  console.log(currentUser)
+  // else {
+  //   alert('You must fill out the form with valid information')
+  // }
+}
+$('#nav-home-btn').click(domUpdates.displayHotelView)
+$('#nav-rooms-btn').click(domUpdates.displayRoomsView)
+$('#nav-book-btn').click(domUpdates.displayBookView)
+$('#nav-contact-btn').click(domUpdates.displayContactView)
+$('#nav-login-btn').click(domUpdates.displayLoginView)
+$('#login-btn').click(displayDashboards)
 
 fetchData()
