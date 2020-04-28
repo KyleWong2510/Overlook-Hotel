@@ -5,7 +5,7 @@
   </head>
   <body>
     <header>
-      <h1>
+      <h1 id="nav-home-btn">
         Overlook Hotel
       </h1>
       <nav id="nav-bar">
@@ -28,7 +28,7 @@
       <div class="guest-view hide">
         <div id="guest-dashboard">
           <div id="guest-dashboard-top">
-            <h3 class="welcome">
+            <h3 id="welcome-guest">
               Welcome, Guest
             </h3>
             <p id="amount-spent">
@@ -51,7 +51,7 @@
       <div class="mgr-view hide">
         <div id="mgr-dashboard">
           <div id="mgr-dashboard-left">
-            <h3 class="welcome">
+            <h3 id="welcome-mgr">
               Welcome, Manager
             </h3>
             <section id="mgr-stats">
@@ -142,7 +142,7 @@
       <div class="rooms-view hide">
         <div id="room-types">
           <div id="residential-suite" class="room-type-card">
-            <div class="img">
+            <div class="room-img">
 
             </div>
             <div class="room-overview">
@@ -159,7 +159,7 @@
             </div>
           </div>
           <div id="suite" class="room-type-card">
-            <div class="img">
+            <div class="room-img">
 
             </div>
             <div class="room-overview">
@@ -176,12 +176,12 @@
             </div>
           </div>
           <div id="junior-suite" class="room-type-card">
-            <div class="img">
+            <div class="room-img">
 
             </div>
             <div class="room-overview">
               <p class="room-type">
-                Junior <br> Suite
+                Junior Suite
               </p>
               <div class="starting-price">
                 <p>Starting at</p> 
@@ -228,6 +228,7 @@
                 Room Type:
               </p>
               <select name="room-type-dropdown">
+                <option>All Rooms</option>
                 <option>Residential Suite</option>
                 <option>Suite</option>
                 <option>Junior Suite</option>
@@ -253,11 +254,11 @@
         <div id="login-container">
           <div>
             <label for="user-name">Username:</label>
-            <input name="user-name" placeholder="Username">
+            <input id="user-name-input" name="user-name" placeholder="Username">
           </div>
           <div>
             <label for="password">Password:</label>
-            <input name="password" type="password" placeholder="Password">
+            <input id="password-input" name="password" type="password" placeholder="Password">
           </div>
           <button id="login-btn">Login</button> 
         </div>

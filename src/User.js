@@ -7,7 +7,7 @@ class User {
   }
 
   addToBookings(bookingsData) {
-    this.userBookings = bookingsData.filter(booking => booking.uerID === this.id)
+    this.userBookings = bookingsData.filter(booking => booking.userID === this.id)
   }
 
   calcAmountSpent(roomsData) {
