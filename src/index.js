@@ -14,7 +14,9 @@ let usersData;
 let roomsData;
 let bookingsData;
 let hotel;
-let dateToday = moment().format('YYYY/MM/DD')
+// let dateToday = moment().format('YYYY/MM/DD')
+let dateToday = '2020/04/20'
+console.log('today', dateToday)
 let currentUser;
 
 const createUsers = (users) => {
@@ -37,24 +39,27 @@ const createBookings = (bookings) => {
   })
 }
 
-const createHotel = (rooms, bookings) => {
-  hotel = new Hotel(rooms, bookings)
-}
 
-const userHandler = (user) => {
-  user.addToBookings(bookingsRepo);
-  user.calcAmountSpent(roomsRepo)
-}
-
-const hotelHandler = (date) => {
-  hotel.filterRoomsBooked(date)
-  hotel.filterRoomsAvailable()
-  hotel.filterUpcomingBookings(date)
-  hotel.filterCurrentBookings(date)
-  hotel.filterPastBookings(date)
-  hotel.calculateTotalRevenue()
-  hotel.calculatePercentOccupied()
-}
+// const userHandler = (user) => {
+  //   user.addToBookings(bookingsRepo);
+  // user.calcAmountSpent(roomsRepo)
+  // }
+  
+  const hotelHandler = (date) => {
+    hotel.filterRoomsBooked(date)
+    hotel.filterRoomsAvailable()
+    hotel.filterUpcomingBookings(date)
+    hotel.filterCurrentBookings(date)
+    hotel.filterPastBookings(date)
+    hotel.calculateTotalRevenue()
+    hotel.calculatePercentOccupied()
+  }
+  
+  const createHotel = (rooms, bookings) => {
+    hotel = new Hotel(rooms, bookings)
+    hotelHandler(dateToday)
+    console.log(hotel)
+  }
 
 const fetchData = () => {
   usersData = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users')
@@ -80,10 +85,52 @@ const fetchData = () => {
       createBookings(bookingsData);
       createHotel(roomsData, bookingsData)
     })
-    .then(() => {
-      hotelHandler(dateToday)    
-    })
+    // .then(() => {
+    //   hotelHandler(dateToday)    
+    // })
     .catch(error => console.error(error))
+}
+
+//PUT IN DOM UPDATES
+const displayUserInfo = (user) => {
+  user.addToBookings(bookingsRepo);
+  $('#welcome-guest').text(`Welcome, ${user.name}`)
+  let formatted = Number(user.calcAmountSpent(roomsRepo).toFixed(2))
+  $('#amount').text(`$${formatted}`)
+  user.userBookings.forEach(booking => {
+    $(`<div class='booking-card' id=${booking.id}>
+      <p>${booking.id}<p> 
+      <p>Room: ${booking.roomNumber}</p>
+      <p>Date: ${booking.date}</p>
+    <div>`)
+    .appendTo('#user-bookings')
+  })
+}
+
+const displayMgrInfo = () => {
+  console.log(hotel)
+  let revenue = Number(hotel.calculateTotalRevenue())
+  $('#revenue').text(`$${revenue}`)
+  $('#num-rooms').text(`${hotel.roomsAvailable.length}`)
+  $('#percent').text(`${hotel.calculatePercentOccupied()}`)
+  
+  hotel.roomsAvailable.forEach(room => {
+    $(`<div class='mgr-available-rooms-card' id='${room.number}'>
+      <div class='card-half'>
+        <span>Room: ${room.number}</span>
+        <span>Type: ${room.roomType}</span>
+        <span>Bidet: ${room.bidet}</span>
+      </div>
+      <div class='card-half'>
+        <span>Bed Count: ${room.numBeds}</span>
+        <span>Bed Size: ${room.bedSize}</span>
+        <span>Cost per Night: $${room.costPerNight}</span>
+      </div>
+
+      <button class='mgr-book-this-room'>Book Now</button>
+    </div>`)
+      .appendTo($('#mgr-rooms-container'))
+  })
 }
 
 const displayDashboards = () => {
@@ -91,21 +138,32 @@ const displayDashboards = () => {
     domUpdates.displayMgrView()
     currentUser = 'manager'
     //How can we access a role?  Extend mgr?
-    currentUser.role = 'manager'
+    // currentUser.role = 'manager'
+    displayMgrInfo()
   }
   for (let i = 0; i < 51; i++) {
     if($('#user-name-input').val() === `customer${i}` && $('#password-input').val() === 'overlook2020') {
       domUpdates.displayGuestView()
       currentUser = usersRepo.find(user => user.id === i)
       currentUser.role = 'guest'
-      userHandler(currentUser)
+      displayUserInfo(currentUser)
+      // userHandler(currentUser)
     }
   }
   console.log(currentUser)
   // else {
-  //   alert('You must fill out the form with valid information')
-  // }
-}
+    //   alert('You must fill out the form with valid information')
+    // }
+  }
+  
+
+
+//COME BACK TO THIS FN
+// const displayRoomsByType = (roomTypes) => {
+//   $('#rooms-by-type-title').text(`Displaying all ${roomTypes}`)
+//   $('#rooms-available-by-type')
+// }
+
 $('#nav-home-btn').click(domUpdates.displayHotelView)
 $('#nav-rooms-btn').click(domUpdates.displayRoomsView)
 $('#nav-book-btn').click(domUpdates.displayBookView)

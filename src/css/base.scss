@@ -180,6 +180,29 @@ main {
   width: 50%;
 }
 
+.available-rooms {
+  height: 10%
+}
+
+#mgr-rooms-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  overflow: scroll;
+}
+
+.mgr-available-rooms-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  margin: 3% 0;
+  justify-content: space-around;
+  padding: 2%;
+  width: 85%;
+}
+
 #search-guest-section {
   display: flex;
   flex-direction: column;
@@ -241,7 +264,7 @@ main {
   width: 100%;
 }
 
-#room-types {
+.room-types {
   align-items: center;
   background-color: lightgrey;
   color: black;
@@ -281,7 +304,6 @@ main {
 
 .room-type {
   font-size: 1.5em;
-  
 }
 
 .starting-price {
@@ -291,6 +313,37 @@ main {
 
 .price {
   font-size: 1.5em;
+}
+
+.rooms-by-type {
+  align-items: center;
+  background-color: lightgrey;
+  color: black;
+  // display: flex;
+  height: 70%;
+  overflow: auto;
+  padding:2%;
+  text-align: center;
+  white-space: nowrap;
+  width: 70%
+}
+
+#user-bookings {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: scroll;
+}
+
+.booking-card {
+  background-color: lightgray;
+  font-size: 1em;
+  height: 45%;
+  margin: 1% 0;
+  padding: 2%;
+  width: 60%;
 }
 
 //BOOKING VIEW

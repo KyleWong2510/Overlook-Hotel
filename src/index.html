@@ -18,7 +18,7 @@
       </nav>
     </header>
     <main>
-      <div class="hotel-view hide">
+      <div class="hotel-view">
         <div id="hotel-view-imgs">
           <div class="hotel-view-img">
             Image Here
@@ -28,13 +28,10 @@
       <div class="guest-view hide">
         <div id="guest-dashboard">
           <div id="guest-dashboard-top">
-            <h3 id="welcome-guest">
-              Welcome, Guest
-            </h3>
+            <h3 id="welcome-guest"></h3>
             <p id="amount-spent">
               Total Spent: 
-              <span id="amount">
-                $5004.24
+              <span id="amount">  
               </span>
             </p>
           </div> 
@@ -59,25 +56,19 @@
                 <p>
                   Today's Revenue:
                 </p>
-                <p id="revenue" class="stat">
-                  $4000.34
-                </p>
+                <p id="revenue" class="stat"></p>
               </div>
               <div id="num-rooms-available">
                 <p>
                   Rooms Available:
                 </p>
-                <p id="num-rooms" class="stat">
-                  5
-                </p>
+                <p id="num-rooms" class="stat"></p>
               </div>
               <div id="percent-booked">
                 <p>
                   Percent Booked:
                 </p>
-                <p id="percent" class="stat">
-                  80%
-                </p>
+                <p id="percent" class="stat"></p>
               </div>
             </section>
             <section id='search-guest-section'>
@@ -105,7 +96,6 @@
                 </div>
               </div>
             </section>
-
           </div>
           <div id="mgr-dashboard-right">
             <section id="mgr-available-rooms" class="">
@@ -140,7 +130,7 @@
         </div>
       </div>
       <div class="rooms-view hide">
-        <div id="room-types">
+        <div class="room-types hide">
           <div id="residential-suite" class="room-type-card">
             <div class="room-img">
 
@@ -210,6 +200,10 @@
             </div>
           </div>
         </div>
+        <div class="rooms-by-type">
+          <p id="rooms-by-type-title"></p>
+          <div id="rooms-available-by-type"></div>
+        </div>
       </div>
       <div class="book-view hide">
         <form id="booking-form">
@@ -250,7 +244,7 @@
       <div class="contact-view">
 
       </div>
-      <div class="login-view">
+      <div class="login-view hide">
         <div id="login-container">
           <div>
             <label for="user-name">Username:</label>
