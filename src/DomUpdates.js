@@ -72,20 +72,7 @@ const domUpdates = {
     $('.contact-view').removeClass('hide')
   },
 
-  // displayUserInfo(user) {
-  //   user.addToBookings(bookingsRepo);
-  //   $('#welcome-guest').text(`Welcome, ${user.name}`)
-  //   let formatted = Number(user.calcAmountSpent(roomsRepo).toFixed(2))
-  //   $('#amount').text(`$${formatted}`)
-  //   user.userBookings.forEach(booking => {
-  //     $(`<div class='booking-card' id=${booking.id}>
-  //       <p>${booking.id}<p> 
-  //       <p>Room: ${booking.roomNumber}</p>
-  //       <p>Date: ${booking.date}</p>
-  //     <div>`)
-  //     .appendTo('#user-bookings')
-  //   })
-  // }
+
 }
 
 export default domUpdates

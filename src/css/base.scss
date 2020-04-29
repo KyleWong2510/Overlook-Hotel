@@ -193,10 +193,10 @@ main {
 }
 
 .mgr-available-rooms-card {
-  background-color: white;
+  background-color:lightgrey;
   display: flex;
   flex-direction: column;
-  height: 25%;
+  height: 35%;
   margin: 3% 0;
   justify-content: space-around;
   padding: 2%;
@@ -246,14 +246,37 @@ main {
   font-size: 1.25em;
 }
 
-#searched-guest-bookings {
+.searched-guest-bookings {
   align-items: center;
   background-color: white;
   display: flex;
   flex-direction: column;
-  font-size: 1.25em;
+  font-size: 1em;
   height: 75%;
   overflow: scroll;
+}
+
+#close-rooms {
+  align-self: end
+}
+
+.book-for-guest {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  height: 75%;
+  overflow: scroll;
+}
+
+.mgr-booking-card {
+  background-color: lightgray;
+  font-size: 1em;
+  height: 45%;
+  margin: 1% 0;
+  padding: 2%;
+  width: 60%;
 }
 
 #search-bar {
