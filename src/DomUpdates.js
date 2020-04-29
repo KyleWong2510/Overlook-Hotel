@@ -70,7 +70,9 @@ const domUpdates = {
     $('.mgr-view').addClass('hide')
     $('.login-view').addClass('hide')
     $('.contact-view').removeClass('hide')
-  }
+  },
+
+
 }
 
 export default domUpdates
